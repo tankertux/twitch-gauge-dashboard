@@ -135,20 +135,58 @@
 	
 	<div class="clearfix"></div>
 	
-	<footer>
+	<!-- start: JavaScript-->
+	<!--[if !IE]>-->
+
+			<script src="acme/js/jquery-2.1.0.min.js"></script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script src="acme/js/jquery-1.11.0.min.js"></script>
+	
+	<![endif]-->
+
+	<!--[if !IE]>-->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='acme/js/jquery-2.1.0.min.js'>"+"<"+"/script>");
+		</script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='acme/js/jquery-1.11.0.min.js'>"+"<"+"/script>");
+		</script>
 		
-		<div class="row">
-			
-			<div class="col-sm-5">
-				&copy; 2014 creativeLabs. <a href="http://bootstrapmaster.com">Admin Templates</a> by BootstrapMaster
-			</div><!--/.col-->
-			
-			<div class="col-sm-7 text-right">
-				Powered by: <a href="http://bootstrapmaster.com/demo/acme/" alt="Bootstrap Admin Templates">ACME Dashboard</a> | Based on Bootstrap 3.1.1 | Built with brix.io <a href="http://brix.io" alt="Brix.io - Interface Builder">Interface Builder</a>
-			</div><!--/.col-->	
-			
-		</div><!--/.row-->
-		
-	</footer>
+	<![endif]-->
+	<script src="acme/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="acme/js/bootstrap.min.js"></script>
+	
+	
+	<!-- page scripts -->
+	<script src="acme/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="acme/js/jquery.sparkline.min.js"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="acme/js/excanvas.min.js"></script><![endif]-->
+	<script src="acme/js/jquery.flot.min.js"></script>
+	<script src="acme/js/jquery.flot.pie.min.js"></script>
+	<script src="acme/js/jquery.flot.stack.min.js"></script>
+	<script src="acme/js/jquery.flot.resize.min.js"></script>
+	<script src="acme/js/jquery.flot.time.min.js"></script>
+	<script src="acme/js/retina.min.js"></script>
+	<script src="acme/js/raphael.min.js"></script>
+	<script src="acme/js/justgage.1.0.1.min.js"></script>
+	
+	<!-- theme scripts -->
+	<script src="acme/js/custom.min.js"></script>
+	<script src="acme/js/core.min.js"></script>
+	
+	<!-- inline scripts related to this page -->
+	<script src="acme/js/pages/index.js"></script>
+	
+	<!-- end: JavaScript-->
     </body>
 </html>
