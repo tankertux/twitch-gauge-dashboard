@@ -7,7 +7,7 @@
 		<meta charset="utf-8">
 		<meta name="description" content="Its got what bots crave...">
 		<meta name="author" content="Jordan Grant">
-		<meta name="keyword" content="Twitch, Broadcaster, Bot, ACME, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+		<meta name="keyword" content="Twitch, Broadcaster, Bot, /acme, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 	<!-- end: Meta -->
 
         <title><g:layoutTitle default="Bot Dashboard"/></title>
@@ -17,28 +17,28 @@
 	<!-- end: Mobile Specific -->
 	
 	<!-- start: CSS -->
-	<link href="acme/css/bootstrap.min.css" rel="stylesheet">
-	<link href="acme/css/style.min.css" rel="stylesheet">
-	<link href="acme/css/retina.min.css" rel="stylesheet">
+	<link href="/acme/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/acme/css/style.min.css" rel="stylesheet">
+	<link href="/acme/css/retina.min.css" rel="stylesheet">
 	<!-- end: CSS -->
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="acme/js/respond.min.js"></script>
-		<link href="acme/css/ie.css" rel="stylesheet">
+		<script src="/acme/js/respond.min.js"></script>
+		<link href="/acme/css/ie.css" rel="stylesheet">
 	<![endif]-->
 	
 	<!--[if IE 9]>
-		<link id="ie9style" href="acme/css/ie9.css" rel="stylesheet">
+		<link id="ie9style" href="/acme/css/ie9.css" rel="stylesheet">
 	<![endif]-->
 	
 	<!-- start: Favicon and Touch Icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="acme/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="acme/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="acme/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="acme/ico/apple-touch-icon-57-precomposed.png">
-	<link rel="shortcut icon" href="acme/ico/favicon.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/acme/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/acme/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/acme/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/acme/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="/acme/ico/favicon.png">
 	<!-- end: Favicon and Touch Icons -->
 	
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -138,20 +138,20 @@
 	<!-- start: JavaScript-->
 	<!--[if !IE]>-->
 
-			<script src="acme/js/jquery-2.1.0.min.js"></script>
+			<script src="/acme/js/jquery-2.1.0.min.js"></script>
 
 	<!--<![endif]-->
 
 	<!--[if IE]>
 	
-		<script src="acme/js/jquery-1.11.0.min.js"></script>
+		<script src="/acme/js/jquery-1.11.0.min.js"></script>
 	
 	<![endif]-->
 
 	<!--[if !IE]>-->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='acme/js/jquery-2.1.0.min.js'>"+"<"+"/script>");
+			window.jQuery || document.write("<script src='/acme/js/jquery-2.1.0.min.js'>"+"<"+"/script>");
 		</script>
 
 	<!--<![endif]-->
@@ -159,33 +159,33 @@
 	<!--[if IE]>
 	
 		<script type="text/javascript">
-	 	window.jQuery || document.write("<script src='acme/js/jquery-1.11.0.min.js'>"+"<"+"/script>");
+	 	window.jQuery || document.write("<script src='/acme/js/jquery-1.11.0.min.js'>"+"<"+"/script>");
 		</script>
 		
 	<![endif]-->
-	<script src="acme/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="acme/js/bootstrap.min.js"></script>
+	<script src="/acme/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/acme/js/bootstrap.min.js"></script>
 	
 	
 	<!-- page scripts -->
-	<script src="acme/js/jquery-ui-1.10.3.custom.min.js"></script>
-	<script src="acme/js/jquery.sparkline.min.js"></script>
-	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="acme/js/excanvas.min.js"></script><![endif]-->
-	<script src="acme/js/jquery.flot.min.js"></script>
-	<script src="acme/js/jquery.flot.pie.min.js"></script>
-	<script src="acme/js/jquery.flot.stack.min.js"></script>
-	<script src="acme/js/jquery.flot.resize.min.js"></script>
-	<script src="acme/js/jquery.flot.time.min.js"></script>
-	<script src="acme/js/retina.min.js"></script>
-	<script src="acme/js/raphael.min.js"></script>
-	<script src="acme/js/justgage.1.0.1.min.js"></script>
+	<script src="/acme/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="/acme/js/jquery.sparkline.min.js"></script>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/acme/js/excanvas.min.js"></script><![endif]-->
+	<script src="/acme/js/jquery.flot.min.js"></script>
+	<script src="/acme/js/jquery.flot.pie.min.js"></script>
+	<script src="/acme/js/jquery.flot.stack.min.js"></script>
+	<script src="/acme/js/jquery.flot.resize.min.js"></script>
+	<script src="/acme/js/jquery.flot.time.min.js"></script>
+	<script src="/acme/js/retina.min.js"></script>
+	<script src="/acme/js/raphael.min.js"></script>
+	<script src="/acme/js/justgage.1.0.1.min.js"></script>
 	
 	<!-- theme scripts -->
-	<script src="acme/js/custom.min.js"></script>
-	<script src="acme/js/core.min.js"></script>
+	<script src="/acme/js/custom.min.js"></script>
+	<script src="/acme/js/core.min.js"></script>
 	
 	<!-- inline scripts related to this page -->
-	<script src="acme/js/pages/index.js"></script>
+	<script src="/acme/js/pages/index.js"></script>
 	
 	<!-- end: JavaScript-->
     </body>
