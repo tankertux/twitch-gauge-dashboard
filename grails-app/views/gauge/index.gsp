@@ -14,7 +14,7 @@
 		<!--row-->
 		<div class="row">
 			<div class="col-sm-2">
-				<button type="button" class="btn btn-default">
+				<button type="button" class="btn btn-default" onclick="location.href='${createLink(controller: 'gauge', action: 'create')}'">
 					<span class="glyphicons circle_plus text-center" style="vertical-align: 18px;"></span> Add Gauge
 				</button>
 			</div>
