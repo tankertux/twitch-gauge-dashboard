@@ -9,4 +9,8 @@ class TwitchGaugeController {
     def index() { 
 		return [gauges: twitchGaugeService.listAll()]
 	}
+	
+	def create(){
+		render view:'/twitchGauge/create'
+	}
 }
