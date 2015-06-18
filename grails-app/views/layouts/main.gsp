@@ -45,10 +45,9 @@
 	<link rel="shortcut icon" href="/acme/ico/favicon.png">
 	<!-- end: Favicon and Touch Icons -->
 	
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <asset:javascript src="application.js"/>
-
-        <g:layoutHead/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <asset:javascript src="application.js"/>
+    <g:layoutHead/>
     </head>
     <body>
     	<!-- start: Header -->
@@ -134,12 +133,9 @@
 		
 	</div><!--/container-->
 	
-		
-		
-	
 	<div class="clearfix"></div>
 	
-	<!-- start: JavaScript-->
+	        <!-- start: JavaScript-->
 	<!--[if !IE]>-->
 
 			<script src="/acme/js/jquery-2.1.0.min.js"></script>
@@ -190,7 +186,7 @@
 	
 	<!-- inline scripts related to this page -->
 	<g:pageProperty name="page.javascript"/>
-	
 	<!-- end: JavaScript-->
+	
     </body>
 </html>

@@ -61,7 +61,7 @@
 		<!-- end: Content -->
 		
 <content tag="javascript">
-	<asset:javascript src="gauge/create.js" />
+	<script src="/gauge/create.js"></script>
 </content>
 		
 	</body>
