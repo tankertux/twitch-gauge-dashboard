@@ -7,6 +7,10 @@ class TwitchGaugeService {
 
 	@Transactional(readOnly = true)
     def listAll() {
-		return Gauge.findAll()
+		return TwitchGauge.findAll()
     }
+	
+	def save(params){
+		new TwitchGauge(params).save()
+	}
 }
