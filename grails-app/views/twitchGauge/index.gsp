@@ -15,8 +15,8 @@
 	<!-- start: Content -->
 	<div id="content" class="col-sm-12 full-radius">
 		<!-- Gauge Headers -->
+		<g:if test="${gauges?.size() > 0}">
 		<div class="row">
-
 			<div class="controls row">
 				<div class="col-md-1 col-sm-2 col-xs-3 text-center">
 					<h2 class="toggle-header">Toggle</h2>
@@ -27,6 +27,7 @@
 			</div>
 
 		</div>
+		</g:if>
 		<!-- /Gauge Headers -->
 
 		<!-- Gauge Rows -->
