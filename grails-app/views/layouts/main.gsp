@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
     <head>
   	<!-- start: Meta -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,6 +15,10 @@
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
+	
+	<!-- Page Specific CSS -->
+	<g:pageProperty name="page.css"/>
+	<!-- /Page Specific CSS -->
 	
 	<!-- start: CSS -->
 	<link href="/acme/css/bootstrap.min.css" rel="stylesheet">
@@ -185,7 +189,7 @@
 	<script src="/acme/js/core.min.js"></script>
 	
 	<!-- inline scripts related to this page -->
-	<script src="/acme/js/pages/index.js"></script>
+	<g:pageProperty name="page.javascript"/>
 	
 	<!-- end: JavaScript-->
     </body>
