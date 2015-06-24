@@ -50,7 +50,7 @@
 								</div>
 								<div class="form-actions">
 								  <g:actionSubmit class="btn btn-primary" value="Save changes" action="save"/>
-								  <button type="reset" class="btn">Cancel</button>
+								  <g:actionSubmit class="btn" value="Cancel" action="index"/>
 								</div>
 							</g:form>
 			</div>
