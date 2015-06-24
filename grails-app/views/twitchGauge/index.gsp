@@ -42,27 +42,34 @@
 								class="switch-handle"></span>
 							</label>
 						</div>
-						<div class="col-md-3 col-sm-4 text-center">
+						<div class="col-md-2 col-sm-4 text-center">
 							<div id="gauge-${gauge.id}"></div>
 						</div>
-						<div class="col-md-2 col-sm-3 text-center">
+						<div class="col-md-1 col-sm-3 text-right">
 							<div id="gauge-${gauge.id}-incrementer">
 								<button type="button" class="btn btn-default" onclick="increment(${gauge.id})">
 									<span class="glyphicons circle_plus text-center" style="vertical-align: 18px;"></span> Increment
 								</button>
 							</div>
 						</div>
-						<div class="col-md-2 col-sm-3 text-center">
+						<div class="col-md-1 col-sm-3 text-center">
 							<div id="gauge-${gauge.id}-drainer">
 								<button type="button" class="btn btn-default" onclick="drain(${gauge.id}, 0)">
 									<span class="glyphicons circle_minus text-center" style="vertical-align: 18px;"></span> Drain
 								</button>
 							</div>
 						</div>
-						<div class="col-md-2 col-sm-3 text-center">
+						<div class="col-md-1 col-sm-3 text-center">
 							<div id="gauge-${gauge.id}-view-link">
 								<button type="button" class="btn btn-default" onclick="drain(${gauge.id}, 0)">
 									<span class="glyphicons film text-center" style="vertical-align: 18px;"></span> View
+								</button>
+							</div>
+						</div>
+						<div class="col-md-1 col-sm-3 text-center">
+							<div id="gauge-${gauge.id}-remove">
+								<button type="button" class="btn btn-default" onclick="location.href='${createLink(controller: 'twitchGauge', action: 'remove', id: gauge.id)}'">
+									<span class="glyphicons circle_remove text-center" style="vertical-align: 18px;"></span> Delete
 								</button>
 							</div>
 						</div>
