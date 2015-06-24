@@ -13,4 +13,8 @@ class TwitchGaugeService {
 	def save(params){
 		new TwitchGauge(params).save()
 	}
+	
+	def get(id){
+		return TwitchGauge.findById(id)
+	}
 }
