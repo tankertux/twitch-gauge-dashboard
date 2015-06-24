@@ -13,7 +13,8 @@ $(function() {
 					max : gauge.threshold,
 					title : gauge.label,
 					label : gauge.keyphrase + 's',
-					refreshAnimationType : 'bounce'
+					refreshAnimationType : 'bounce',
+					levelColors: ["FF0000","FF9900","FFFF00","CCFF66","00CC00"]
 				});
 			
 			setInterval(function() {
