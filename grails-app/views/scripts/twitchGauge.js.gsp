@@ -4,11 +4,14 @@
 $(function() {
 	if(gauges){
 	   console.log('Gauges: ' + JSON.stringify(gauges));
-		$.each(gauges, initializeRefreshingGauge);
+		$.each(gauges, function(index, gauge){
+							var gaugeRefresh = initializeRefreshingGauge(index, gauge);
+							initializeDrainSlider(index, gauge);
+							setInterval(getInvocations, 2500, gauge.id, gaugeRefresh);
+						});
 	}
   });
-
-
+  
 // JQuery for operating the threshold slider on twitchGauge/create.gsp
 $(".sliderThreshold").slider({
 		range: "min",
@@ -19,7 +22,16 @@ $(".sliderThreshold").slider({
 			$( ".gaugeThreshold input").val(ui.value);
 		}
 	});
-
+	
+// Execute an async call to check a gauge current value and execute a callback with the given value
+function getInvocations(id, callback) {
+	$.ajax({
+		method: "GET",
+		url: "invocations/" + id
+	}).done(function(invocations){
+		callback(invocations); 
+	});
+}	
 
 // Functions for buttons and elements
 function initializeRefreshingGauge(index, gauge){
@@ -36,17 +48,27 @@ function initializeRefreshingGauge(index, gauge){
 			levelColors: ["FF0000","FF9900","FFFF00","CCFF66","00CC00"]
 		});
 	
-	setInterval(function() {
-		$.ajax({
-			method: "GET",
-			url: "invocations/" + gauge.id
-		}).done(function(invocations){
+	return function(invocations){
 			g1.refresh(invocations);
-		});
-	
-	}, 2500);
+		}
 }
 
+function initializeDrainSlider(index, gauge){
+	// JQuery for operating the drain sliders on twitchGauge/index.gsp
+	function createDrainSlider(invocations){
+		$(".drain-" + gauge.id + "-slider").slider({
+				range: "min",
+				value: 0,
+				min: 0,
+				max: invocations,
+				slide: function( event, ui ) {
+					$( ".drain-" + gauge.id + "-value input").val(ui.value);
+				}
+			});
+	};
+	createDrainSlider(gauge.invocations);
+	// return createDrainSlider;
+}
 
 function increment(id) {
 	$.ajax({
@@ -54,3 +76,12 @@ function increment(id) {
 		url: "increment/" + id
 	})
 }
+
+function drain(id) {
+	$.ajax({
+		method: "GET",
+		url: "drain/" + id,
+		data: {"drainTotal" : $( ".drain-" + id + "-value input").val()}
+	})
+}
+
