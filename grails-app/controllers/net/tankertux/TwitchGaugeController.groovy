@@ -36,4 +36,10 @@ class TwitchGaugeController {
 		gauge.invocations = gauge.invocations + 1
 		gauge.save()
 	}
+	
+	def drain(Long id){
+		def gauge = twitchGaugeService.get(id)
+		gauge.invocations = gauge.invocations - Integer.parseInt(params.drainTotal ?: "0")
+		gauge.save()
+	}
 }
