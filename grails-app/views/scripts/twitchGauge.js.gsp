@@ -9,7 +9,7 @@ $(function() {
 							var drainRefresh = initializeDrainSlider(index, gauge);
 							
 							
-							setInterval(getInvocations, 2500, gauge.id, [gaugeRefresh, drainRefresh]);
+							setInterval(getInvocations, 1000, gauge.id, [gaugeRefresh, drainRefresh]);
 						});
 	}
   });
