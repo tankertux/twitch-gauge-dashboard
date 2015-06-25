@@ -56,7 +56,7 @@
 							<div class="row">
 								<div class="col-sm-12">
 										<div class="slider drain-${gauge.id}-slider sliderLightOrange ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all col-sm-10" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
-										<div class="drain-${gauge.id}-value"><input type="hidden" name="drain-${gauge.id}-value-input" value="0" /></div>
+										<div class="drain-${gauge.id}-value"><input type="hidden" name="drain-${gauge.id}-value-input" value="1" /></div>
 								</div>
 							</div>
 						</div>

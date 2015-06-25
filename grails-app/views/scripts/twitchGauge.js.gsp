@@ -6,8 +6,10 @@ $(function() {
 	   console.log('Gauges: ' + JSON.stringify(gauges));
 		$.each(gauges, function(index, gauge){
 							var gaugeRefresh = initializeRefreshingGauge(index, gauge);
-							initializeDrainSlider(index, gauge);
-							setInterval(getInvocations, 2500, gauge.id, gaugeRefresh);
+							var drainRefresh = initializeDrainSlider(index, gauge);
+							
+							
+							setInterval(getInvocations, 2500, gauge.id, [gaugeRefresh, drainRefresh]);
 						});
 	}
   });
@@ -24,12 +26,14 @@ $(".sliderThreshold").slider({
 	});
 	
 // Execute an async call to check a gauge current value and execute a callback with the given value
-function getInvocations(id, callback) {
+function getInvocations(id, callbacks) {
 	$.ajax({
 		method: "GET",
 		url: "invocations/" + id
 	}).done(function(invocations){
-		callback(invocations); 
+	    $.each(callbacks, function(index, callback){
+								callback(invocations); 
+							});
 	});
 }	
 
@@ -56,9 +60,11 @@ function initializeRefreshingGauge(index, gauge){
 function initializeDrainSlider(index, gauge){
 	// JQuery for operating the drain sliders on twitchGauge/index.gsp
 	function createDrainSlider(invocations){
+		var currentDrainValue = $(".drain-" + gauge.id + "-value input").val();
+	
 		$(".drain-" + gauge.id + "-slider").slider({
 				range: "min",
-				value: 0,
+				value: invocations >= currentDrainValue ? currentDrainValue : invocations,
 				min: 0,
 				max: invocations,
 				slide: function( event, ui ) {
@@ -67,7 +73,7 @@ function initializeDrainSlider(index, gauge){
 			});
 	};
 	createDrainSlider(gauge.invocations);
-	// return createDrainSlider;
+	return createDrainSlider;
 }
 
 function increment(id) {
