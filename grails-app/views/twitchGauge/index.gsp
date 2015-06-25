@@ -19,25 +19,31 @@
 			<div class="row">
 				<div class="form-group">
 					<div class="controls row">
-						<div class="col-md-1 col-sm-2 text-center">
-							<label class="switch switch-success"> <input
-								type="checkbox" class="switch-input"
-								name="toggle-${gauge.webSafeLabel}" /> <span
-								class="switch-label" data-on="On" data-off="Off"></span> <span
-								class="switch-handle"></span>
-							</label>
+						<div class="col-md-3">
+							<div class="row">
+								<div class="col-sm-3 text-center">
+									<label class="switch switch-success"> <input
+										type="checkbox" class="switch-input"
+										name="toggle-${gauge.webSafeLabel}" /> <span
+										class="switch-label" data-on="On" data-off="Off"></span> <span
+										class="switch-handle"></span>
+									</label>
+								</div>												
+								<div class="col-sm-9 text-center">
+									<div id="gauge-${gauge.id}"></div>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-2 col-sm-4 text-center">
-							<div id="gauge-${gauge.id}"></div>
-						</div>
-						<div class="col-md-1 col-sm-3 text-center">
+						<div class="col-md-9">
+							<div class="row">
+						<div class="col-sm-3 text-center">
 							<div id="gauge-${gauge.id}-incrementer">
 								<button type="button" class="btn btn-default" onclick="increment(${gauge.id})">
 									<span class="glyphicons circle_plus text-center" style="vertical-align: 18px;"></span> Increment
 								</button>
 							</div>
 						</div>
-						<div class="col-md-1 col-sm-3 text-center">
+						<div class="col-sm-3 text-center">
 							<div class="row">
 								<div class="col-sm-12">
 									<div id="gauge-${gauge.id}-drainer">
@@ -49,12 +55,12 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12">
-										<div class="slider drain-${gauge.id} sliderGreen ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all col-sm-10" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+										<div class="slider drain-${gauge.id}-slider sliderLightOrange ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all col-sm-10" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
 										<div class="drain-${gauge.id}-value"><input type="hidden" name="drain-${gauge.id}-value-input" value="0" /></div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-1 col-sm-3 text-center">
+						<div class="col-sm-3 text-center">
 							<div id="gauge-${gauge.id}-view-link">
 								<button type="button" class="btn btn-default" onclick="location.href='${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id)}'">
 									<span class="glyphicons film text-center" style="vertical-align: 18px;"></span> View
@@ -66,6 +72,8 @@
 								<button type="button" class="btn btn-default" onclick="location.href='${createLink(controller: 'twitchGauge', action: 'remove', id: gauge.id)}'">
 									<span class="glyphicons circle_remove text-center" style="vertical-align: 18px;"></span> Delete
 								</button>
+							</div>
+						</div>
 							</div>
 						</div>
 					</div>
