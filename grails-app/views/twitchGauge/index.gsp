@@ -62,7 +62,7 @@
 						</div>
 						<div class="col-sm-3 text-center">
 							<div id="gauge-${gauge.id}-view-link">
-								<button type="button" class="btn btn-default" onclick="window.open('${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id)}')">
+								<button type="button" class="btn btn-default" onclick="window.open('${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id)}', 'name', 'location=no,scrollbars=no,status=no,toolbar=no,resizable=yes')">
 									<span class="glyphicons film text-center" style="vertical-align: 18px;"></span> View
 								</button>
 							</div>
