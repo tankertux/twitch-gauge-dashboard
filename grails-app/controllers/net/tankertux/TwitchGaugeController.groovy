@@ -24,7 +24,7 @@ class TwitchGaugeController {
 	}
 	
 	def show(Long id){
-		[gauge: twitchGaugeService.get(id)]
+		[gauges: [twitchGaugeService.get(id)]]
 	}
 	
 	def invocations(Long id){
