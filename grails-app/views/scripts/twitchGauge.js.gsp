@@ -15,12 +15,16 @@ function initializeGaugeObject(index, gauge){
 	setInterval(getInvocations, 1000, gauge.id, [gaugeRefresh, drainRefresh]);
 	
 	// Initialize URL copy-to-clipboard buttons
+	
 	var client = new ZeroClipboard( document.getElementById("copy-gauge-" + gauge.id + "-url") );
 	client.on( "ready", function( readyEvent ) {
       client.on( "aftercopy", function( event ) {
-        alert("Copied text to clipboard: " + event.data["text/plain"] );
+        $("#gauge-" + gauge.id + "-copy-url-dialog").dialog('open');
+        setTimeout(function() {$("#gauge-" + gauge.id + "-copy-url-dialog").dialog('close');}, 1000);
+        //alert("Copied text to clipboard: " + event.data["text/plain"] );
       } );
     } );
+    $("#gauge-" + gauge.id + "-copy-url-dialog").dialog({autoOpen: false, dialogClass: "no-close", height: "50", width: "200", show: { effect: "fade", duration: 400 }});
 	// END Initialize URL copy-to-clipboard buttons
 }
   

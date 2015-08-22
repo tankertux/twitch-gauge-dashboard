@@ -6,3 +6,7 @@
 .toggle-title {
 	font-size: 18px;	
 }
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
