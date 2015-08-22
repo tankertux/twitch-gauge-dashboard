@@ -24,7 +24,7 @@ function initializeGaugeObject(index, gauge){
         //alert("Copied text to clipboard: " + event.data["text/plain"] );
       } );
     } );
-    $("#gauge-" + gauge.id + "-copy-url-dialog").dialog({autoOpen: false, dialogClass: "no-close", height: "50", width: "200", show: { effect: "fade", duration: 400 }});
+    $("#gauge-" + gauge.id + "-copy-url-dialog").dialog({autoOpen: false, dialogClass: "no-close", height: "50", width: "200", show: { effect: "fade", duration: 400 }}).prev(".ui-dialog-titlebar").css("background", "#78CC51");
 	// END Initialize URL copy-to-clipboard buttons
 }
   
