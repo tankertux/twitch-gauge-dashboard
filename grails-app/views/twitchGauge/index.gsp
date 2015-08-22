@@ -61,7 +61,7 @@
 						</div>
 						<div class="col-sm-2 text-center">
 							<div id="gauge-${gauge.id}-copy-url-link">
-								<button type="button" class="btn btn-default gauge-${gauge.id}-url-copy-btn">
+								<button type="button" class="btn btn-default gauge-${gauge.id}-url-copy-btn" id="copy-gauge-${gauge.id}-url" data-clipboard-text="${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id, absolute: true)}">
 									<span class="glyphicons notes_2 text-center" style="vertical-align: 18px;"></span> Copy URL
 								</button>
 								<input type="hidden" class="gauge-${gauge.id}-url" name="gauge-${gauge.id}-url" value="${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id)}" />

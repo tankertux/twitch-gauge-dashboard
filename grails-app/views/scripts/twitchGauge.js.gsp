@@ -15,22 +15,12 @@ function initializeGaugeObject(index, gauge){
 	setInterval(getInvocations, 1000, gauge.id, [gaugeRefresh, drainRefresh]);
 	
 	// Initialize URL copy-to-clipboard buttons
-	$('.gauge-' + gauge.id + '-url-copy-btn').click(function(event) {
-	  	var copyTextarea = document.querySelector('.gauge-' + gauge.id + '-url');
-	  	var range = document.createRange();
-	  	range.selectNode(copyTextarea);
-	  	window.getSelection().addRange(range);
-	  	copyTextarea.select();
-	
-		try {
-			var successful = document.execCommand('copy');
-			var msg = successful ? 'successful' : 'unsuccessful';
-			console.log('Copying text command was ' + msg);
-		} catch (err) {
-			console.log('Oops, unable to copy');
-		}
-		window.getSelection().removeAllRanges();
-	});
+	var client = new ZeroClipboard( document.getElementById("copy-gauge-" + gauge.id + "-url") );
+	client.on( "ready", function( readyEvent ) {
+      client.on( "aftercopy", function( event ) {
+        alert("Copied text to clipboard: " + event.data["text/plain"] );
+      } );
+    } );
 	// END Initialize URL copy-to-clipboard buttons
 }
   

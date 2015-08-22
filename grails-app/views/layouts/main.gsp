@@ -48,6 +48,7 @@
 	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <asset:javascript src="application.js"/>
+    <asset:javascript src="ZeroClipboard.js"/>
     <g:layoutHead/>
     </head>
     <body>
