@@ -22,11 +22,10 @@
 						<div class="col-md-3">
 							<div class="row">
 								<div class="col-sm-3">
-									<label class="switch switch-success"> <input
-										type="checkbox" class="switch-input"
-										name="toggle-${gauge.webSafeLabel}" /> <span
-										class="switch-label" data-on="On" data-off="Off"></span> <span
-										class="switch-handle"></span>
+									<label class="switch switch-success"> 
+										<input type="checkbox" class="switch-input"	name="toggle-${gauge.webSafeLabel}" /> 
+										<span class="switch-label" data-on="On" data-off="Off"></span>
+										<span class="switch-handle"></span>
 									</label>
 								</div>												
 								<div class="col-sm-9">
