@@ -36,14 +36,14 @@
 						</div>
 						<div class="col-md-9">
 							<div class="row">
-						<div class="col-sm-3 text-center">
+						<div class="col-sm-2 text-center">
 							<div id="gauge-${gauge.id}-incrementer">
 								<button type="button" class="btn btn-default" onclick="increment(${gauge.id})">
 									<span class="glyphicons circle_plus text-center" style="vertical-align: 18px;"></span> Increment
 								</button>
 							</div>
 						</div>
-						<div class="col-sm-3 text-center">
+						<div class="col-sm-2 text-center">
 							<div class="row">
 								<div class="col-sm-12">
 									<div id="gauge-${gauge.id}-drainer">
@@ -60,14 +60,22 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-3 text-center">
+						<div class="col-sm-2 text-center">
+							<div id="gauge-${gauge.id}-copy-url-link">
+								<button type="button" class="btn btn-default gauge-${gauge.id}-url-copy-btn">
+									<span class="glyphicons notes_2 text-center" style="vertical-align: 18px;"></span> Copy URL
+								</button>
+								<input type="hidden" class="gauge-${gauge.id}-url" name="gauge-${gauge.id}-url" value="${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id)}" />
+							</div>
+						</div>
+						<div class="col-sm-2 text-center">
 							<div id="gauge-${gauge.id}-view-link">
 								<button type="button" class="btn btn-default" onclick="window.open('${createLink(controller: 'twitchGauge', action: 'show', id: gauge.id)}', 'name', 'width=250, height=200, location=no, scrollbars=no, status=no, toolbar=no, resizable=yes')">
 									<span class="glyphicons film text-center" style="vertical-align: 18px;"></span> View
 								</button>
 							</div>
 						</div>
-						<div class="col-md-1 col-sm-3 text-center">
+						<div class="col-md-1 col-sm-2 text-center">
 							<div id="gauge-${gauge.id}-remove">
 								<button type="button" class="btn btn-default" onclick="location.href='${createLink(controller: 'twitchGauge', action: 'remove', id: gauge.id)}'">
 									<span class="glyphicons circle_remove text-center" style="vertical-align: 18px;"></span> Delete

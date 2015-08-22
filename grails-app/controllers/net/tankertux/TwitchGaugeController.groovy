@@ -42,4 +42,9 @@ class TwitchGaugeController {
 		gauge.invocations = gauge.invocations - Integer.parseInt(params.drainTotal ?: "0")
 		gauge.save()
 	}
+	
+	def remove(Long id){
+		twitchGaugeService.get(id).delete()
+		redirect action:'index', controller: 'twitchGauge'
+	}
 }

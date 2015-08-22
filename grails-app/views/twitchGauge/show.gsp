@@ -61,7 +61,7 @@
 	
 	<!-- inline scripts related to this page -->
 	<%@ page import="com.google.gson.Gson" %>
-	<!--  Gauges: ${raw(new Gson().toJson(gauges))} -->
+	<!--  Gauge: ${raw(new Gson().toJson(gauges))} -->
 	<g:javascript>
 	var gauges = ${raw(new Gson().toJson(gauges))}
 	</g:javascript>
