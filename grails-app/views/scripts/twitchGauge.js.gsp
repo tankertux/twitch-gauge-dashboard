@@ -98,13 +98,23 @@ function initializeDrainSlider(index, gauge){
 
 function increment(id) {
 	$.ajax({
+		mimeType:  "text/html",
 		method: "GET",
 		url: "increment/" + id
 	})
 }
 
+function toggle(id) {
+	$.ajax({
+	    mimeType:  "text/html",
+		method: "GET",
+		url: "toggle/" + id
+	})
+}
+
 function drain(id) {
 	$.ajax({
+	    mimeType:  "text/html",
 		method: "GET",
 		url: "drain/" + id,
 		data: {"drainTotal" : $( ".drain-" + id + "-value input").val()}

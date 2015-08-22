@@ -3,8 +3,8 @@ package net.tankertux
 import org.apache.log4j.Logger;
 
 class TwitchGauge {
-
 	String label;
+	boolean isActive = false
 	String keyphrase;
 	Integer capacity;
 	Integer invocations = 0;

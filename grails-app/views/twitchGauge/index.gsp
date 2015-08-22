@@ -23,7 +23,7 @@
 							<div class="row">
 								<div class="col-sm-3">
 									<label class="switch switch-success"> 
-										<input type="checkbox" class="switch-input"	name="toggle-${gauge.webSafeLabel}" /> 
+										<input type="checkbox" class="switch-input"	name="toggle-${gauge.webSafeLabel}" onclick="toggle(${gauge.id})" ${gauge.isActive ? "checked" : ""}/> 
 										<span class="switch-label" data-on="On" data-off="Off"></span>
 										<span class="switch-handle"></span>
 									</label>
