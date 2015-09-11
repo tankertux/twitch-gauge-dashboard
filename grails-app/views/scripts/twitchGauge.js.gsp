@@ -21,7 +21,6 @@ function initializeGaugeObject(index, gauge){
       client.on( "aftercopy", function( event ) {
         $("#gauge-" + gauge.id + "-copy-url-dialog").dialog('open');
         setTimeout(function() {$("#gauge-" + gauge.id + "-copy-url-dialog").dialog('close');}, 1000);
-        //alert("Copied text to clipboard: " + event.data["text/plain"] );
       } );
     } );
     $("#gauge-" + gauge.id + "-copy-url-dialog").dialog({autoOpen: false, dialogClass: "no-close", height: "50", width: "200", show: { effect: "fade", duration: 400 }}).prev(".ui-dialog-titlebar").css("background", "#78CC51");
@@ -43,7 +42,7 @@ $(".sliderThreshold").slider({
 function getInvocations(id, callbacks) {
 	$.ajax({
 		method: "GET",
-		url: "invocations/" + id
+		url: "/twitchGauge/invocations/" + id
 	}).done(function(invocations){
 	    $.each(callbacks, function(index, callback){
 								callback(invocations); 
