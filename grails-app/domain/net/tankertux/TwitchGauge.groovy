@@ -1,7 +1,5 @@
 package net.tankertux
 
-import org.apache.log4j.Logger;
-
 class TwitchGauge {
 	String label;
 	boolean isActive = false
