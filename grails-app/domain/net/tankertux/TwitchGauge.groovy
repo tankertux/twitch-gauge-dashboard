@@ -10,7 +10,7 @@ class TwitchGauge {
     static constraints = {
 		label blank: false, unique: true
 		keyphrase blank: false
-		capacity blank: false
+		capacity min: 1
     }
 	
 	public String getWebSafeLabel(){
