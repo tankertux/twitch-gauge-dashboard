@@ -17,4 +17,9 @@ class TwitchGaugeService {
 	def get(id){
 		return TwitchGauge.findById(id)
 	}
+
+	@Transactional(readOnly = true)
+	def findByKeyPhrase(phrase){
+        return TwitchGauge.findByKeyphraseILike(phrase)
+    }
 }
