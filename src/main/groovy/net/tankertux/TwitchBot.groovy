@@ -1,11 +1,13 @@
-package net.tankertux;
+package net.tankertux
 
-import org.apache.log4j.Logger;
-import org.jibble.pircbot.PircBot;
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
+import org.jibble.pircbot.PircBot
 
 public class TwitchBot extends PircBot {
 
-    private transient Logger logger  = Logger.getLogger(getClass());
+    private transient Log logger  = LogFactory.getLog(getClass());
+
     TwitchGaugeService twitchGaugeService;
 
     @Override
@@ -16,6 +18,8 @@ public class TwitchBot extends PircBot {
     @Override
     protected void onMessage(String channel, String sender, String login, String hostname, String message) {
         def gauges = twitchGaugeService.findByKeyPhrase(message);
+        if(gauges.size() > 0) logger.info String.format("Message received matching %s gauges", gauges.size())
+        else logger.info "Incoming message matched no gauges"
         gauges.each { gauge ->
                 gauge.invocations = gauge.invocations + 1
                 gauge.save()
