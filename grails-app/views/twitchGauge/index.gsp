@@ -102,6 +102,23 @@
 			</div>
 		</div>
 		<!--/Add Gauge-->
+		<br>
+		<!--Bot Control-->
+		<div class="row">
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-default"
+					onclick="location.href='${createLink(controller: 'bot', action: 'enable')}'">
+					<span class="glyphicon glyphicon-eye-open text-center"></span> Enable Bot
+				</button>
+			</div>
+			<div class="col-sm-2">
+				<button type="button" class="btn btn-default"
+					onclick="location.href='${createLink(controller: 'bot', action: 'disable')}'">
+					<span class="glyphicon glyphicon-eye-close text-center"></span> Disable Bot
+				</button>
+			</div>
+		</div>
+        <!--/-Bot Control-->
 
 		<hr>
 		<hr>

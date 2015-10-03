@@ -2,7 +2,7 @@
 import net.tankertux.TwitchBot
 
 beans = {
-    bot(TwitchBot)  { bean ->
+    twitchBot(TwitchBot)  { bean ->
         twitchGaugeService = ref("twitchGaugeService")
         nickname = 'TankertuxBot'
     }

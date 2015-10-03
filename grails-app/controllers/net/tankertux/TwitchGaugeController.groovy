@@ -28,7 +28,7 @@ class TwitchGaugeController {
 	}
 	
 	def invocations(Long id){
-		render text: twitchGaugeService.get(id).invocations
+		render text: twitchGaugeService.get(id)?.invocations
 	}
 	
 	def increment(Long id){

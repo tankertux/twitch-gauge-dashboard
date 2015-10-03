@@ -18,8 +18,8 @@ class TwitchGaugeService {
 		return TwitchGauge.findById(id)
 	}
 
-	@Transactional(readOnly = true)
-	def findByKeyPhrase(phrase){
-        return TwitchGauge.findByKeyphraseILike(phrase)
+	@Transactional
+	def findActiveByKeyPhrase(phrase){
+        return TwitchGauge.findAllByIsActiveAndKeyphrase(true, phrase)
     }
 }
