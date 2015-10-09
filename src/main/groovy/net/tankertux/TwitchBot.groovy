@@ -7,12 +7,16 @@ import org.jibble.pircbot.PircBot
 public class TwitchBot extends PircBot {
 
     TwitchGaugeService twitchGaugeService;
+    def channel
+
+    def sendMessage(String message){
+        sendMessage channel, message
+    }
 
     @Override
     protected void onConnect() {
         super.onConnect()
-        log.debug("Connected!")
-        sendMessage("#tankertux", "*Beep Boop* Gauge bot connected")
+        sendMessage(channel, "*Beep Boop* Gauge bot connected")
     }
 
     @Override

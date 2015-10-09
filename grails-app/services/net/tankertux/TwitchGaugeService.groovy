@@ -5,7 +5,6 @@ import grails.transaction.Transactional
 @Transactional
 class TwitchGaugeService {
 
-	@Transactional(readOnly = true)
     def listAll() {
 		return TwitchGauge.findAll()
     }
@@ -18,7 +17,6 @@ class TwitchGaugeService {
 		return TwitchGauge.findById(id)
 	}
 
-	@Transactional
 	def findActiveByKeyPhrase(phrase){
         return TwitchGauge.findAllByIsActiveAndKeyphrase(true, phrase)
     }
