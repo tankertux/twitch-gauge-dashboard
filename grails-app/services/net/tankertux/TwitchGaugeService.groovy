@@ -20,4 +20,6 @@ class TwitchGaugeService {
 	def findActiveByKeyPhrase(phrase){
         return TwitchGauge.findAllByIsActiveAndKeyphrase(true, phrase)
     }
+
+
 }
