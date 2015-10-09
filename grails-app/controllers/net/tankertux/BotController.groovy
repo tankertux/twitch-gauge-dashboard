@@ -2,9 +2,10 @@ package net.tankertux;
 
 public class BotController {
     BotService botService
+    BotConfigurationService configurationService
 
     def enable(){
-        botService.join()
+        botService.join(configurationService.fetch())
         redirect action:'index', controller: 'twitchGauge'
     }
 
