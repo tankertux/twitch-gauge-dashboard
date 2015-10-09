@@ -16,6 +16,7 @@ public class TwitchBot extends PircBot {
     @Override
     protected void onConnect() {
         super.onConnect()
+        joinChannel(channel)
         sendMessage(channel, "*Beep Boop* Gauge bot connected")
     }
 
