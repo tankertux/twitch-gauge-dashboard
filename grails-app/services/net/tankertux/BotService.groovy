@@ -1,26 +1,20 @@
 package net.tankertux
 
 import groovy.util.logging.Slf4j
-import org.springframework.beans.BeansException
-import org.springframework.context.ApplicationContext
-import org.springframework.context.ApplicationContextAware;
+import net.tankertux.exception.UnconfiguredBotException
 
 @Slf4j
-public class BotService implements ApplicationContextAware {
+public class BotService {
 
     def twitchBot
-    def applicationContext
 
     def join() {
-        def host = applicationContext.getBean('host')
-        def port = applicationContext.getBean('port')
-        def password = applicationContext.getBean('password')
-        def channel = applicationContext.getBean('channel')
         if (twitchBot.isConnected()) {
             twitchBot.sendMessage('*Beep Boop* Gauge bot online')
         } else {
-            twitchBot.connect(host, port, password)
-            twitchBot.joinChannel(channel)
+            twitchBot.nickname = configuration.botName
+            twitchBot.channel = configuration.channel
+            twitchBot.connect(configuration.host, configuration.port, configuration.oauthKey)
         }
     }
 
@@ -28,8 +22,31 @@ public class BotService implements ApplicationContextAware {
         if (twitchBot.isConnected()) twitchBot.disconnect()
     }
 
-    @Override
-    void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.@applicationContext = applicationContext
+    BotConfiguration configuration
+
+    def configure() {
+        if(null == configuration){
+            setConfiguration(BotConfiguration.get(1))
+        }
+        return configuration
+    }
+
+    private void setConfiguration(def config){
+        validate(config)
+        this.@configuration = config
+    }
+
+    private void validate(def config) {
+        log.info("Validation for " + config)
+        if(null == config || config.botName?.isEmpty()) throw new UnconfiguredBotException()
+    }
+
+    def persist(params){
+        BotConfiguration config = BotConfiguration.get(1)
+        if(null == config) config = new BotConfiguration()
+        config.botName = params.botName
+        config.channel = params.channel
+        config.oauthKey = params.oauthKey
+        config.save()
     }
 }

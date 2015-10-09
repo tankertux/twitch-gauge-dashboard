@@ -1,16 +1,38 @@
-package net.tankertux;
+package net.tankertux
+
+import net.tankertux.exception.UnconfiguredBotException;
 
 public class BotController {
     BotService botService
-    BotConfigurationService configurationService
 
-    def enable(){
-        botService.join(configurationService.fetch())
-        redirect action:'index', controller: 'twitchGauge'
+    def index(){
+        redirect action: 'index', controller: 'twitchGauge'
     }
 
-    def disable(){
+    def enable() {
+        try {
+            botService.configure()
+        }
+        catch (UnconfiguredBotException e) {
+            redirect action: 'configure', controller: 'bot'
+        }
+
+        botService.join()
+        redirect action: 'index', controller: 'twitchGauge'
+    }
+
+    def disable() {
         botService.leave();
-        redirect action:'index', controller: 'twitchGauge'
+        redirect action: 'index', controller: 'twitchGauge'
     }
+
+    def configure() {
+        render view: '/bot/configure'
+    }
+
+    def save(params) {
+        botService.persist(params)
+        redirect action: 'index', controller: 'twitchGauge'
+    }
+
 }

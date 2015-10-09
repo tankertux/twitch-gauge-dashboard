@@ -68,7 +68,7 @@
 					<ul class="nav pull-right">
 						<!-- start: Settings menu -->
 						<li>
-							<a class="btn" href="/">
+							<a class="btn" href="${createLink(controller: 'bot', action: 'configure')}">
 								<i class="halflings cog white"></i>
 							</a>
 						</li>
