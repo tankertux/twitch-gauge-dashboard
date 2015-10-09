@@ -3,8 +3,8 @@ package net.tankertux;
 public class BotConfiguration {
     String botName
     String oauthKey
-    String host
-    Integer port
+    String host = 'irc.twitch.tv'
+    Integer port = 6667
     String channel
 
     static constraints = {
