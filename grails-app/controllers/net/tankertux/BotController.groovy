@@ -5,15 +5,13 @@ import net.tankertux.exception.UnconfiguredBotException;
 public class BotController {
     BotService botService
 
-    def index(){
+    def index() {
         redirect action: 'index', controller: 'twitchGauge'
     }
 
     def enable() {
-        try {
-            botService.configure()
-        }
-        catch (UnconfiguredBotException e) {
+        botService.configure()
+        if (null == botService.configuration) {
             redirect action: 'configure', controller: 'bot'
         }
 

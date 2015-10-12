@@ -31,16 +31,6 @@ public class BotService {
         return configuration
     }
 
-    private void setConfiguration(def config){
-        validate(config)
-        this.@configuration = config
-    }
-
-    private void validate(def config) {
-        log.info("Validation for " + config)
-        if(null == config || config.botName?.isEmpty()) throw new UnconfiguredBotException()
-    }
-
     def persist(params){
         BotConfiguration config = BotConfiguration.get(1)
         if(null == config) config = new BotConfiguration()
