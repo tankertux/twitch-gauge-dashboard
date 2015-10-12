@@ -12,7 +12,7 @@ function initializeGaugeObject(index, gauge){
 	var gaugeRefresh = initializeRefreshingGauge(index, gauge);
 	var drainRefresh = initializeDrainSlider(index, gauge);
 	
-	setInterval(getInvocations, 1000, gauge.id, [gaugeRefresh, drainRefresh]);
+	setInterval(getInvocations, 1750, gauge.id, [gaugeRefresh, drainRefresh]);
 	
 	// Initialize URL copy-to-clipboard buttons
 	
