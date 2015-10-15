@@ -32,11 +32,10 @@ public class BotService {
     }
 
     def persist(params){
-        BotConfiguration config = BotConfiguration.get(1)
-        if(null == config) config = new BotConfiguration()
-        config.botName = params.botName
-        config.channel = params.channel
-        config.oauthKey = params.oauthKey
-        config.save()
+        configuration = new BotConfiguration()
+        configuration.botName = params.botName
+        configuration.channel = params.channel
+        configuration.oauthKey = params.oauthKey
+        configuration.save()
     }
 }

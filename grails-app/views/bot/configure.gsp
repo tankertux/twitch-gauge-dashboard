@@ -12,9 +12,20 @@
 
 		<!--row-->
 		<div class="row">
-		<div class="col-sm-4"><h1>Bot Configuration:</h1>
+		    <div class="col-sm-4"><h1>Current Bot Configuration:</h1></div>
 		</div>
+		<div class="row">
+            <div class="col-sm-2">Bot Name:</div>
+            <div class="col-sm-2">${configuration?.botName}</div>
 		</div>
+        <div class="row">
+            <div class="col-sm-2">Channel:</div>
+            <div class="col-sm-2">${configuration?.channel}</div>
+        </div>
+
+		<div class="row">
+        		<div class="col-sm-4"><h1>Create a configuration:</h1></div>
+        </div>
 		<div class="row">
 			<div class="col-sm-12">
 				<g:form role="form" method="get" action="save">

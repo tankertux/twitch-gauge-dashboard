@@ -10,7 +10,6 @@ public class BotController {
     }
 
     def enable() {
-        botService.configure()
         if (null == botService.configuration) {
             redirect action: 'configure', controller: 'bot'
         }
@@ -25,7 +24,7 @@ public class BotController {
     }
 
     def configure() {
-        render view: '/bot/configure'
+        [configuration : botService.configuration]
     }
 
     def save(params) {
