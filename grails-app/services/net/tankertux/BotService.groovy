@@ -24,13 +24,6 @@ public class BotService {
 
     BotConfiguration configuration
 
-    def configure() {
-        if(null == configuration){
-            setConfiguration(BotConfiguration.get(1))
-        }
-        return configuration
-    }
-
     def persist(params){
         configuration = new BotConfiguration()
         configuration.botName = params.botName
@@ -38,4 +31,9 @@ public class BotService {
         configuration.oauthKey = params.oauthKey
         configuration.save()
     }
+
+    def configs(){
+        return BotConfiguration.findAll()
+    }
+
 }

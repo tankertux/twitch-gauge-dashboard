@@ -1,7 +1,5 @@
 package net.tankertux
 
-import net.tankertux.exception.UnconfiguredBotException;
-
 public class BotController {
     BotService botService
 
@@ -11,11 +9,11 @@ public class BotController {
 
     def enable() {
         if (null == botService.configuration) {
-            redirect action: 'configure', controller: 'bot'
+            redirect action: 'configure', controller: 'bot', namespace: null
+        } else {
+            botService.join()
+            redirect action: 'index', controller: 'twitchGauge'
         }
-
-        botService.join()
-        redirect action: 'index', controller: 'twitchGauge'
     }
 
     def disable() {
@@ -24,11 +22,17 @@ public class BotController {
     }
 
     def configure() {
-        [configuration : botService.configuration]
+        [configuration: botService.configuration ?: new BotConfiguration(), allConfigurations: botService.configs()]
     }
 
     def save(params) {
         botService.persist(params)
+        redirect action: 'index', controller: 'twitchGauge'
+    }
+
+    def select(params) {
+        def tokens = params.selected.split(" ")
+        botService.configuration = BotConfiguration.get(new BotConfiguration(botName: tokens[0], channel: tokens[2]))
         redirect action: 'index', controller: 'twitchGauge'
     }
 

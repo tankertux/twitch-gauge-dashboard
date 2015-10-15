@@ -15,16 +15,25 @@
 		    <div class="col-sm-4"><h1>Current Bot Configuration:</h1></div>
 		</div>
 		<div class="row">
-            <div class="col-sm-2">Bot Name:</div>
-            <div class="col-sm-2">${configuration?.botName}</div>
-		</div>
-        <div class="row">
-            <div class="col-sm-2">Channel:</div>
-            <div class="col-sm-2">${configuration?.channel}</div>
-        </div>
-
+            <div class="col-sm-12">
+                <g:form role="form" method="get" action="select">
+                    <div class="form-group">
+                      <div class="controls">
+                        <div class="input-group col-sm-3">
+                            <g:select class="form-control" name="selected" from="${allConfigurations}" value="${configuration}" noSelection="['':'-Choose your bot-']"/>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-actions">
+                      <g:actionSubmit class="btn btn-primary" value="Select" action="select"/>
+                    </div>
+                </g:form>
+            </div>
+            <hr>
+            <hr>
+        </div> <!-- end row -->
 		<div class="row">
-        		<div class="col-sm-4"><h1>Create a configuration:</h1></div>
+        		<div class="col-sm-4"><h2>Create a configuration:</h2></div>
         </div>
 		<div class="row">
 			<div class="col-sm-12">
